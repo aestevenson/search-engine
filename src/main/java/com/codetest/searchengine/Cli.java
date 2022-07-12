@@ -7,6 +7,8 @@ import java.util.Set;
 import java.util.StringTokenizer;
 
 public class Cli {
+
+    private static SearchEngine se = new SearchEngine();
     public static void main(String[] argv) {
         //TODO: close on exception
         Scanner scan = new Scanner(System.in);
@@ -22,8 +24,7 @@ public class Cli {
         scan.close();        
     }
 
-    private static String handle(String line) {
-        SearchEngine se = new SearchEngine();
+    private static String handle(String line) {        
         StringTokenizer st = new StringTokenizer(line);
         String command = null;
         Integer docId = null;
@@ -47,8 +48,7 @@ public class Cli {
 
             i += 1;
         }
-                
-        //TODO: Can use the command pattern here.
+                        
         if (command.equals("index")) {
              try { 
                 String r = se.index(docId, tokens);

@@ -90,8 +90,7 @@ public class SearchEngine {
         List<Character> tokenBuilder = new ArrayList<Character>();
         List<Character> subQueryBuilder = new ArrayList<Character>();
         boolean inSubQuery = false;
-                          
-        //TODO: Bit of a mess - at the very least this needs to broken down into tasks.
+
         for (int i = 0; i < qeChars.length; i++) {
             if (qeChars[i] == '(') {
                 inSubQuery = true;
